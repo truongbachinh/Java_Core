@@ -1,6 +1,8 @@
 package ThucHanhCollection.ThucHanhBaiTap.Bai2;
 
-public class PurchaseDetail {
+import java.util.Objects;
+
+public class PurchaseDetail implements Comparable<PurchaseDetail> {
     private int idPurchase;
     private int idDetail;
     private int itemId;
@@ -19,6 +21,23 @@ public class PurchaseDetail {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PurchaseDetail)) return false;
+        PurchaseDetail that = (PurchaseDetail) o;
+        return getIdPurchase() == that.getIdPurchase() &&
+                getIdDetail() == that.getIdDetail() &&
+                getItemId() == that.getItemId() &&
+                getAmount() == that.getAmount() &&
+                Float.compare(that.getPrice(), getPrice()) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getIdPurchase(), getIdDetail(), getItemId(), getAmount(), getPrice());
+    }
+
+    @Override
     public String toString() {
         return "PurchaseDetail{" +
                 "idPurchase=" + idPurchase +
@@ -27,6 +46,11 @@ public class PurchaseDetail {
                 ", amount=" + amount +
                 ", price=" + price +
                 '}';
+    }
+
+    @Override
+    public int compareTo(PurchaseDetail o) {
+        return this.idPurchase - o.idPurchase;
     }
 
     public int getIdPurchase() {

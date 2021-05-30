@@ -1,8 +1,9 @@
 package ThucHanhCollection.ThucHanhBaiTap.Bai2;
 
 import java.util.Date;
+import java.util.Objects;
 
-public class Purchase {
+public class Purchase implements Comparable<Purchase> {
     private int idPurchase;
     private Date purDate;
     private String SupplierId;
@@ -23,6 +24,26 @@ public class Purchase {
                 ", purDate=" + purDate +
                 ", SupplierId='" + SupplierId + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Purchase o) {
+        return this.idPurchase - o.idPurchase;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Purchase)) return false;
+        Purchase purchase = (Purchase) o;
+        return getIdPurchase() == purchase.getIdPurchase() &&
+                Objects.equals(getPurDate(), purchase.getPurDate()) &&
+                Objects.equals(getSupplierId(), purchase.getSupplierId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getIdPurchase(), getPurDate(), getSupplierId());
     }
 
     public int getIdPurchase() {

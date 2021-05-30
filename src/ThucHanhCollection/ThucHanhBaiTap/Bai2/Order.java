@@ -2,7 +2,7 @@ package ThucHanhCollection.ThucHanhBaiTap.Bai2;
 
 import java.util.Date;
 
-public class Order implements Comparable {
+public class Order implements Comparable<Order> {
     private int idOrder;
     private Date orDate;
     private String customerId;
@@ -22,8 +22,8 @@ public class Order implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        return this.idOrder - idOrder;
+    public int compareTo(Order o) {
+        return this.idOrder - o.idOrder;
     }
 
     @Override
