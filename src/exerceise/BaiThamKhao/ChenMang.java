@@ -10,7 +10,7 @@ public class ChenMang {
         a[4] = 20;
         a[5] = 50;
         //a ={ 1, 2, 5, 8, 20, 50 ,0 ,0, 0,  0}
-        int[] x = {3, 4, 15, 60};
+        int[] x = {3, 4, 55, 60};
         // lấy từng phần tử của x
         int i = 0;
         int j = 0;
@@ -41,7 +41,14 @@ public class ChenMang {
             i = cuoi;
             if (j > n - 1) break;
         }
+
         /// chèn nốt vào bên phải;  ....
+        for (int k = n; k < a.length; k++) {
+                a[n] = x[i];
+                i++;
+                n++;
+        }
+
         for (i = 0; i < a.length; i++) {
             System.out.print(a[i] + " ");
         }

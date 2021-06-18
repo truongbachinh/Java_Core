@@ -1,17 +1,18 @@
 package ThucHanhStreamAPI.Lambda_Expression;
 
 @FunctionalInterface
-interface Drawable
-{
-    void draw();
+interface Drawable {
+    void draw(String s
+    );
 }
+
 public class test {
     public static void main(String[] args) {
-        int width = 10;
+        String width = "1";
         //implement using lambda
-        Drawable dr = ()->{
-            System.out.println("Drawing: " + width);
+        Drawable dr = (s) -> {
+            System.out.println("Drawing: " + s);
         };
-        dr.draw();
+        dr.draw(width);
     }
 }

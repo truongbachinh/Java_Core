@@ -9,7 +9,7 @@ import java.util.function.ToLongFunction;
 public class compareById implements Comparator<Depositors> {
     @Override
     public int compare(Depositors o1, Depositors o2) {
-        return o1.getId() - o2.getId();
+        return o1.getFullname().compareTo(o2.getFullname());
     }
 
 

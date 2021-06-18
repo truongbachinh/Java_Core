@@ -26,11 +26,9 @@ public class test_28_05 {
         int max2 = 0;
         int[] a = new int[ST.length];
         for (int i = 0; i < ST.length; i++) {
-            int temp = (viTri(ST[i], max)).size();
-            if (temp > max2) {
-                max2 = temp;
-            }
+            viTriMax(ST[i], max);
         }
+        System.out.println(Arrays.toString(a));
     }
 
     public static int findMax(String s) {
@@ -45,20 +43,25 @@ public class test_28_05 {
         return max;
     }
 
-    static ArrayList<Integer> viTri(String s, int max) {
-        ArrayList<Integer> arrList = new ArrayList<>();
+    static int[] viTriMax(String s, int max) {
+
+        int[] vitri = new int[s.length()];
         String[] sp = s.split("");
         int count = 0;
+        int end = 0;
         for (int i = sp.length - 1; i >= 0; i--) {
             if ((sp[i].equals(" ") || sp[i].equals(",") || sp[i].equals("."))) {
-                if (count == max) {
-                    arrList.add(count);
+                if (max == count) {
+                    vitri[end] = max;
+                    end++;
+
                 }
                 count = 0;
             } else {
                 count++;
             }
         }
-        return arrList;
+        System.out.println(Arrays.toString(vitri));
+        return vitri;
     }
 }
