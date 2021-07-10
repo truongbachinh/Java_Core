@@ -45,17 +45,29 @@ public class testDataStream {
 
             ;
 
-            for (int i = 0; i < AA.length; i++) {
-                int temp = A[i];
-                int pos = i;
-                for (int j = i + 1; j < AA.length; j++) {
-                    if (AA[j] < temp) {
-                        temp = A[j];
-                        pos = j;
+//            for (int i = 0; i < AA.length; i++) {
+//                int position = i;
+//                int temp = AA[i];
+//                for (int j = i + 1; j < AA.length; j++) {
+//                    if(temp > AA[j])
+//                    {
+//                        temp = AA[j];
+//                        position = j;
+//                    }
+//                }
+//                AA[position] = AA[i];
+//                AA[i] = temp;
+//
+//
+//            }
+            int temp;
+            for (int i = 0; i < AA.length - 1; i++) {
+                for (int j = 0; j < AA.length-1; j++) {
+                    if(AA[j] > AA[j+1])
+                    {
+
                     }
                 }
-                AA[pos] = AA[i];
-                AA[i] = temp;
             }
 
             System.out.println("Mảng sau khi sắp xếp: ");

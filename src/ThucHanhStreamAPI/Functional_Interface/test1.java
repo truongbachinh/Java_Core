@@ -2,7 +2,7 @@ package ThucHanhStreamAPI.Functional_Interface;
 
 @FunctionalInterface
 interface sayAble {
-    void say(String msg);
+    abstract public void say(String msg);
 
     default void sayAble2(String msg) {
         System.out.println(msg);
@@ -31,7 +31,6 @@ public class test1 implements sayAble {
         test1 t = new test1();
         t.say("hello");
         t.sayAble2("hello");
-        sayAble:
-        sayAble.sayAble3("Linh");
+        sayAble:sayAble.sayAble3("Linh");
     }
 }

@@ -2,7 +2,7 @@ package arr_exerceise.ThuatToanSapXep;
 
 import java.util.Arrays;
 
-public class InsertSort {
+public class    InsertSort {
     public static void main(String[] args) {
         // T
         int[] number = {5, 2, 3, 4, 6, 2};

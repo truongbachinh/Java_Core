@@ -5,7 +5,7 @@ public class PassbyValue {
     int data = 50;
 
     void change(int data) {
-        data = data + 100;
+       data = data + 100;
     }
     int change(int data,int value)
     {
@@ -18,7 +18,7 @@ public class PassbyValue {
 
         System.out.println("Trước khi thay đổi: " + op.data);
 
-        op.change(500);
+        op.change(op.data);
 
         System.out.println("Sau khi thay đổi: " + op.data);
     }

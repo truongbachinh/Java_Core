@@ -1,12 +1,10 @@
 package ThucHanh_IO_Stream.ObjectStream;
 
-import com.sun.xml.internal.ws.api.model.SEIModel;
-
 import java.io.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
-class Student implements Serializable {
+class Student {
     private static final long serialVersion = 1L;
     private String fullname;
     private String dob;
@@ -55,7 +53,7 @@ public class testObjectStreaam {
 
 
     public testObjectStreaam() throws IOException {
-        File file = new File("src/arrStudent.txt");
+        File file = new File("src/arrStudent.dat");
         if (!(file.exists())) {
             file.createNewFile();
         }
@@ -69,38 +67,38 @@ public class testObjectStreaam {
 
     public static void main(String[] args) throws NullPointerException, CloneNotSupportedException, IOException {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Amount of student in array: ");
-        int n = sc.nextInt();
-        Student[] A = new Student[n];
-        System.out.println("Provide information: ");
-        for (int i = 0; i < n; i++) {
-            System.out.println("fullname: ");
-            String fullname = sc.next();
-            System.out.println("DOB: ");
-            String dob = sc.next();
-            System.out.println("address: ");
-            String address = sc.next();
-            sc.nextLine();
-            A[i] = new Student();
-            A[i].setFullname(fullname);
-            A[i].setDob(dob);
-            A[i].setAddress(address);
-        }
+//        System.out.println("Amount of student in array: ");
+//        int n = sc.nextInt();
+//        Student[] A = new Student[n];
+//        System.out.println("Provide information: ");
+//        for (int i = 0; i < n; i++) {
+//            System.out.println("fullname: ");
+//            String fullname = sc.next();
+//            System.out.println("DOB: ");
+//            String dob = sc.next();
+//            System.out.println("address: ");
+//            String address = sc.next();
+//            sc.nextLine();
+//            A[i] = new Student();
+//            A[i].setFullname(fullname);
+//            A[i].setDob(dob);
+//            A[i].setAddress(address);
+//        }
+//
 
-
-        testObjectStreaam test = new testObjectStreaam();
-        try {
-            test.ghiArrObjectFile(A);
-        } catch (IOException exception) {
-            exception.printStackTrace();
-        }
-        test.close();
+//        testObjectStreaam test = new testObjectStreaam();
+//        try {
+//            test.ghiArrObjectFile(A);
+//        } catch (IOException exception) {
+//            exception.printStackTrace();
+//        }
+//        test.close();
 
 
         System.out.println("-----------------Read_File-------------------");
         System.out.println("Nhập tên file cần đọc");
         String st = sc.nextLine();
-        File fileData = new File(st);
+        File fileData = new File("src/arrStudent.txt");
         testObjectStreaam testInput = new testObjectStreaam(fileData);
         try {
             Student[] AA = testInput.readInput();
